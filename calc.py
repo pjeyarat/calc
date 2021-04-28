@@ -49,9 +49,17 @@ def tokenize(inp):
             l.append(")")
             i = i + 1
         elif inp[i] == "a":
+            s = inp[i:i+3]
+            if s != "add":
+                print("malformed input")
+                sys.exit(1)
             i = i + 3
             l.append("add")
         elif inp[i] == "m":
+            s = inp[i:i+8]
+            if s != "multiply":
+                print("malformed input")
+                sys.exit(1)
             i = i + 8
             l.append("multiply")
         elif inp[i] == " ":
